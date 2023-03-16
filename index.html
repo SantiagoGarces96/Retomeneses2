@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <!-- estilos-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- logo principal -->
+      <nav class="desktop-nav">
+        <!-- define una sección de navegación para dispositivos de escritorio. -->
+        <img src="/images/logo.svg" alt="Snap Logo" />
+        <!--muestra un logotipo con la ruta de la imagen-->
+        <div class="links">
+          <!--define un contenedor para los enlaces de navegación.-->
+          <ul>
+            <!--define una lista sin ordenar.-->
+            <li>
+              <!--define un elemento de la lista-->
+              <!--"toggleFeaturesDropdown(); llama a una función JavaScript cuando se hace clic en el elemento.-->
+              <span
+                id="parent-desktopnav-features"
+                onclick="toggleFeaturesDropdown();"
+                >Features<img
+                  class="dropdownIcon"
+                  id="desktopnav-features-icon"
+                  src="/images/icon-arrow-down.svg"
+                  alt="icon arrow down"
+              /></span>
+              <!--"desktopnav-features"  define un contenedor de elementos desplegables.-->
+              <div id="desktopnav-features" class="dropdown">
+                <ul>
+                  <li>
+                    <img src="/images/icon-todo.svg" alt="todo" /><span
+                      >Todo List</span
+                    >
+                  </li>
+                  <li>
+                    <img src="/images/icon-calendar.svg" alt="calendar" /><span
+                      >Calendar</span
+                    >
+                  </li>
+                  <li>
+                    <img
+                      src="/images/icon-reminders.svg"
+                      alt="reminders"
+                    /><span>Reminders</span>
+                  </li>
+                  <li>
+                    <img src="/images/icon-planning.svg" alt="planning" /><span
+                      >Planning</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <span
+                id="parent-desktopnav-company"
+                onclick="toggleCompanyDropdown();"
+                >Company
+                <img
+                  class="dropdownIcon"
+                  id="desktopnav-company-icon"
+                  src="/images/icon-arrow-down.svg"
+                  alt="icon arrow down"
+              /></span>
+              <div id="desktopnav-company" class="dropdown">
+                <ul>
+                  <li>History</li>
+                  <li>Our Team</li>
+                  <li>Blog</li>
+                </ul>
+              </div>
+            </li>
+            <li>Careers</li>
+            <li>About</li>
+          </ul>
+        </div>
+        <div class="btnContainer">
+          <!--muestra un botón de inicio de sesión con el texto "Login".-->
+          <button class="loginBtn">Login</button>
+          <!--muestra un botón de registro con el texto "Register"-->
+          <button class="registerBtn">Register</button>
+        </div>
+      </nav>
+      <!-- "mobile-nav" define una sección de navegación para dispositivos móviles.-->
+      <nav class="mobile-nav">
+        <img src="/images/logo.svg" alt="Snap Logo" />
+        <img src="/images/icon-menu.svg" onclick="openMenu()" alt="menu icon" />
+        <!-- "mobile-menu" define un contenedor de menú desplegable para dispositivos móviles.-->
+        <div id="mobile-menu" class="mobile-menu">
+          <!-- "mobile-links" define un contenedor para los enlaces de navegación en dispositivos móviles.-->
+          <div id="mobile-links" class="mobile-links">
+            <!--define un contenedor para el icono de cierre.-->
+            <div class="closeIcon">
+              <img
+                id="closeMenu"
+                onclick="closeMenu();"
+                src="/images/icon-close-menu.svg"
+                alt="close menu"
+              />
+            </div>
+            <!--define un contenedor para los enlaces de navegación.-->
+            <div class="linksContainer">
+              <ul>
+                <li>
+                  <span
+                    id="parent-mobilenav-features"
+                    onclick="toggleMobileFeaturesDropdown();"
+                    >Features<img
+                      class="mobile-dropdownIcon"
+                      id="mobilenav-features-icon"
+                      src="/images/icon-arrow-down.svg"
+                      alt="icon arrow down"
+                  /></span>
+                  <div id="mobilenav-features" class="mobile-dropdown">
+                    <ul>
+                      <li>
+                        <img src="/images/icon-todo.svg" alt="todo" /><span
+                          >Todo List</span
+                        >
+                      </li>
+                      <li>
+                        <img
+                          src="/images/icon-calendar.svg"
+                          alt="calendar"
+                        /><span>Calendar</span>
+                      </li>
+                      <li>
+                        <img
+                          src="/images/icon-reminders.svg"
+                          alt="reminders"
+                        /><span>Reminders</span>
+                      </li>
+                      <li>
+                        <img
+                          src="/images/icon-planning.svg"
+                          alt="planning"
+                        /><span>Planning</span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <span
+                    id="parent-mobilenav-company"
+                    onclick="toggleMobileCompanyDropdown();"
+                    >Company
+                    <img
+                      class="mobile-dropdownIcon"
+                      id="mobilenav-company-icon"
+                      src="/images/icon-arrow-down.svg"
+                      alt="icon arrow down"
+                  /></span>
+                  <div id="mobilenav-company" class="mobile-dropdown">
+                    <ul>
+                      <li>History</li>
+                      <li>Our Team</li>
+                      <li>Blog</li>
+                    </ul>
+                  </div>
+                </li>
+                <li>Careers</li>
+                <li>About</li>
+              </ul>
+              <div class="mobileBtnContainer">
+                <button class="mobileLoginBtn">Login</button>
+                <button class="mobileRegisterBtn">Register</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="detailsContainer">
+        <h1>Make<br />remote work</h1>
+        <h1>Make remote work</h1>
+        <p>
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>
+        <button>Learn more</button>
+        <div class="iconContainer">
+          <img src="/images/client-databiz.svg" alt="databiz" />
+          <img src="/images/client-audiophile.svg" alt="audiophile" />
+          <img src="/images/client-meet.svg" alt="meet" />
+          <img src="/images/client-maker.svg" alt="maker" />
+        </div>
+      </div>
+      <!--que contiene dos secciones diferentes, una para la vista de escritorio y otra para la vista móvil. La vista de escritorio contiene una imagen grande de ancho completo-->
+      <div class="hero">
+        <div class="desktop-hero">
+          <img src="/images/image-hero-desktop.png" alt="image-hero-desktop" />
+        </div>
+        <div class="mobile-hero">
+          <img src="/images/image-hero-mobile.png" alt="image-hero-mobile" />
+        </div>
+      </div>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">SANTIAGO AGUIRRE GARCES</a>.
+
+      <script src="./index.js"></script>
+      <!--que carga un archivo JavaScript-->
+    </div>
+  </body>
+</html>

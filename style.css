@@ -1,0 +1,573 @@
+/*Esta línea importa una fuente de Google Fonts llamada "Epilogue" con dos variantes: 500 y 700. El parámetro "display=swap" indica que se debe mostrar la fuente de inmediato y luego cargarla en segundo plano.*/
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+/*Se establece un tamaño de fuente de 13 píxeles y se alinea el texto al centro.*/
+.attribution {
+    font-size: 13px;
+    text-align: center;
+}
+
+/*se define un color azul para el texto y se elimina la decoración subrayada predeterminada para los enlaces.*/
+.attribution a {
+    color: hsl(228, 45%, 44%);
+    text-decoration: none;
+}
+
+/*efine variables de color personalizadas que se utilizarán en otras partes del código.*/
+:root {
+    --Almost-White: hsl(0, 0%, 98%);
+    --Medium-Gray: hsl(0, 0%, 41%);
+    --Almost-Black: hsl(0, 0%, 8%);
+}
+
+/*se establece la altura mínima y ancho máximo en 100% de la altura y ancho de la ventana, se desactiva la selección de texto por parte del usuario*/
+body {
+    font-family: 'Epilogue', sans-serif;
+    min-height: 100vh;
+    max-width: 100vw;
+    user-select: none;
+    background-color: var(--Almost-White);
+}
+
+/*este elemento no se mostrará en el sitio web.*/
+.mobile-nav {
+    display: none;
+}
+
+/*flex este elemento se mostrará como un contenedor flexible, flexión en "fila"
+y se alinean los elementos secundarios verticalmente, 13 píxeles en la parte superior e inferior y 33 píxeles a la izquierda y derecha.*/
+.desktop-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 13px 33px;
+}
+
+/*flex establece el tamaño flexible del elemento 1, lo que significa que ocupará todo el espacio disponible*/
+.links {
+    flex: 1;
+    color: var(--Medium-Gray);
+}
+
+/*hover cuando el cursor del mouse está encima, pointer lo que significa que se muestra el cursor de selección de texto habitual.*/
+li:hover,
+button:hover {
+    cursor: pointer;
+}
+
+/*diplay:flex lo que permite la distribución flexible de los elementos secundarios dentro del elemento,flex-direction:column se estableceran en columna vertical*/
+.links li {
+    display: flex;
+    flex-direction: column;
+}
+
+
+li:hover {
+    color: var(--Almost-Black);
+}
+
+/*al hijo: establece el margen izquierdo del elemento lo que crea un espacio adicional entre el segundo elemento*/
+.links>li:nth-child(2) {
+    margin-left: 50px;
+}
+
+/*quita los puntos de lista, contenedor flexible , los elementos secundarios de la lista no ordenada se distribuyan en una fila
+centra verticalmente los elementos secundarios, tamaño de fuente
+distribuye los elementos secundarios de manera uniforme en el espacio disponible
+margen superior de 12 píxeles, margen izquierdo de -10 píxeles*/
+.desktop-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 435px;
+    font-size: 15px;
+    justify-content: space-evenly;
+    margin-top: 12px;
+    margin-left: -10px;
+}
+
+/*convierte los botones en un contenedor flexible, elementos secundarios de los botones se distribuyan en una fila
+margen superior de -2 píxeles*/
+.desktop-nav .btnContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: -2px;
+}
+
+/*elimina el contorno predeterminado, elimina cualquier borde, color de fondo del botón como transparente,
+tamaño de fuente del botón en 15 píxeles*/
+.loginBtn {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--Medium-Gray);
+}
+
+
+.loginBtn:hover {
+    color: var(--Almost-Black);
+}
+
+/*margen izquierdo de 30 píxeles, elimina el borde, fondo como transparente,
+un borde sólido de 2 píxeles, relleno de 12 píxeles en la parte superior y inferior y 20 píxeles en los lados izquierdo y derecho,
+una transición suave de 250 milisegundos los cambios en las propiedades de estilo*/
+.registerBtn {
+    margin-left: 30px;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid var(--Medium-Gray);
+    padding: 12px 20px;
+    font-size: 15px;
+    border-radius: 16px;
+    font-family: inherit;
+    color: var(--Medium-Gray);
+    transition: all 250ms ease-in-out;
+
+}
+
+
+.registerBtn:hover {
+    color: var(--Almost-Black);
+    border-color: var(--Almost-Black);
+}
+
+/*contenedor flexible, dirección principal del contenedor en horizontal,
+centra los elementos verticalmente, distribuye el espacio disponible,
+relleno de 0 píxeles en la parte superior e inferior y 138 píxeles en los lados izquierdo y derecho.*/
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 138px;
+}
+
+/*contenedor sea visible como un bloque, ancho del contenedor en 480px*/
+.desktop-hero {
+    display: block;
+    width: 480px;
+}
+
+/*la separación entre la imagen y el elemento superior en 50px, 
+la separación entre la imagen y el elemento izquierdo en 15px,
+la imagen se ajuste al ancho del contenedor*/
+.desktop-hero img {
+    margin-top: 50px;
+    margin-left: 15px;
+    width: 100%;
+}
+
+/*oculta la imagen en la vista móvil*/
+.mobile-hero {
+    display: none;
+}
+
+/* espacio dentro del contenedor a la derecha e izquierda en 100px y 19px respectivamente*/
+.detailsContainer {
+    padding-right: 100px;
+    padding-left: 19px;
+}
+
+/*entre la parte superior del contenedor y el título en 157px, 
+el tamaño de fuente en 78px*/
+.detailsContainer h1 {
+    margin-top: 157px;
+    font-size: 78px;
+    color: var(--Almost-Black);
+}
+
+/*ocultar la segunda etiqueta, es decir, no se mostrará en la página web*/
+.detailsContainer>h1:nth-child(2) {
+    display: none;
+}
+
+/*el espacio a la derecha del contenedor en 75px, el tamaño de fuente en 18px
+la altura de línea en 28px, la separación entre la parte superior del contenedor y el primer párrafo sea 
+de -7px*/
+.detailsContainer p {
+    color: var(--Medium-Gray);
+    padding-right: 75px;
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: -7px;
+}
+
+/*el espacio de relleno en la parte superior e inferior del botón (19px) y en los lados izquierdo y derecho del botón (29px).,
+el margen superior del botón 36px, el grosor de la fuente del texto 700,
+que el borde del botón no tenga ancho ni estilo, que el borde exterior del botón no tenga estilo,
+establece el ancho 2px, la duración (250ms) y la curva de animación (ease-in-out) de cualquier transición de estilo que ocurra en el botón*/
+.detailsContainer button {
+    background-color: var(--Almost-Black);
+    color: var(--Almost-White);
+    font-family: inherit;
+    font-size: 18px;
+    padding: 19px 29px;
+    border-radius: 14px;
+    margin-top: 36px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    border: 2px solid var(--Almost-Black);
+    transition: all 250ms ease-in-out;
+}
+
+/*transparente cuando el cursor está sobre él,
+la duración (250ms) y la curva de animación de cualquier transición de estilo*/
+.detailsContainer button:hover {
+    color: var(--Almost-Black);
+    background-color: transparent;
+    transition: all 250ms ease-in-out;
+}
+
+/*un contenedor flexible, elementos organizados en fila, centrados verticalmente
+ancho fijo de 485 píxeles, distribuye el espacio sobrante a ambos lados de los elementos,
+margen superior de 108 píxeles.*/
+.iconContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 485px;
+    justify-content: space-between;
+    margin-top: 108px;
+}
+
+/*tiene una posición absoluta, relleno interior de 10 píxeles,
+transformación se utiliza para ocultar el elemento, ya que su valor es cero y los elementos de escala no se muestran en pantalla,
+se activa la transición en la regla de abajo, el valor de la escala se ajusta para mostrar el elemento*/
+.dropdown {
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border-radius: 13px;
+    color: var(--Medium-Gray);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 150ms ease-in-out;
+}
+
+/*contenedor de lista como flexible, elementos apilados verticalmente,
+un ancho del 100% del ancho disponible*/
+.dropdown ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*margen superior de 1.8 píxeles*/
+.dropdown>ul>li:nth-child(1) {
+    margin-top: 1.8px;
+}
+
+/*colocados en una línea horizontal, se colocarán en una fila,
+tendrá el ancho completo disponible, elementos interiores se colocarán en el extremo izquierdo,
+margen superior e inferior 7.85px y el margen izquierdo es -32px*/
+.dropdown li {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: start;
+    font-size: 15px;
+    margin: 7.85px 0;
+    margin-left: -32px;
+}
+
+/*margen izquierdo de 15px*/
+.dropdown span {
+    margin-left: 15px;
+}
+
+/*margen izquierdo de 8px*/
+.dropdownIcon {
+    margin-left: 8px;
+}
+
+/*estableciendo el ancho 135px, la altura de 140px, posición superior 70px,
+posición izquierda en 113px*/
+#desktopnav-features {
+    width: 135px;
+    height: 140px;
+    top: 70px;
+    left: 113px;
+}
+
+/*una transición a todas las propiedades durante 250ms
+con una función de tiempo de transición*/
+#desktopnav-features-icon {
+    transition: all 250ms ease-in-out;
+}
+
+/*una transición a todas las propiedades durante 250ms
+con una función de tiempo de transición*/
+#desktopnav-company-icon {
+    transition: all 250ms ease-in-out;
+}
+
+/*ancho, altura, la posición superior, la posición izquierda*/
+#desktopnav-company {
+    width: 96px;
+    height: 108px;
+    top: 70px;
+    left: 306px;
+}
+
+/*asegura que el elemento se muestre completamente,
+establecemos una sombra de caja usando,
+crea un efecto de sombra en el elemento,
+controlan la ubicación, tamaño y difuminado de la sombra,
+establece el color y la opacidad de la sombra.*/
+.show {
+    transform: scaleY(1);
+    box-shadow: -1px 5px 100px -28px rgb(0 0 0 / 50%);
+}
+
+/*solo se aplicará a pantallas que cumplan con este criterio
+el margen y el relleno en 0*/
+
+@media only screen and (max-width:768px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /*una línea horizontal, se colocarán en una fila, colocarán en el centro vertical,
+    espacien uniformemente a lo largo de la fila, relleno superior e inferior,
+    un relleno izquierdo y derecho*/
+    .mobile-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 18px;
+    }
+
+    /*oculta el elemento*/
+    .desktop-hero {
+        display: none;
+    }
+
+    /*muestra el elemento, un bloque de ancho completo.*/
+    .mobile-hero {
+        display: block;
+        width: 100%;
+    }
+
+    /*ancho de la imagen, da un margen superior*/
+    .mobile-hero img {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    /*oculta el elemento*/
+    .desktop-nav {
+        display: none;
+    }
+
+    /*elementos hijos se apilan en columnas, en orden inverso al predeterminado,
+    el ancho del elemento, el relleno*/
+    main {
+        flex-direction: column-reverse;
+        width: 100%;
+        padding: 0;
+    }
+
+    /*el ancho del elemento, establece el relleno, centrado horizontalmente el texto,
+    margen superior*/
+    .detailsContainer {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+        margin-top: 45px;
+    }
+
+    /*oculta el primer elemento "h1" que es un hijo directo*/
+    .detailsContainer>h1:nth-child(1) {
+        display: none;
+    }
+
+    /*el segundo elemento sea visible, todo el ancho disponible, 
+    definir el tamaño de la fuente, eliminar cualquier espacio adicional*/
+    .detailsContainer>h1:nth-child(2) {
+        display: initial;
+        width: 100%;
+        font-size: 35px;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*definir el tamaño y la altura de la línea del texto, 
+     para eliminar cualquier espacio adicional alrededor del elemento,
+     agregar un poco de espacio en los lados, 
+     agregar un espacio en la parte superior*/
+    .detailsContainer p {
+        font-size: 16px;
+        line-height: 25px;
+        margin: 0;
+        padding: 0 10px;
+        margin-top: 21px;
+    }
+
+    /*para eliminar cualquier espacio adicional, espacio en la parte superior,
+    superponer el borde izquierdo, agregar un poco de espacio dentro del botón,
+    definir el tamaño de la fuente del texto*/
+    .detailsContainer button {
+        margin: 0;
+        margin-top: 25px;
+        margin-left: -5px;
+        padding: 13px 17px 13px 15px;
+        font-size: 17px;
+    }
+
+    /*ancho disponible, agregar un espacio en la parte superior48px,
+    centrar el contenedor horizontalmente, distribuir uniformemente el espacio*/
+    .iconContainer {
+        width: 95%;
+        margin: 0;
+        padding: 0;
+        margin-top: 48px;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-evenly;
+    }
+
+    /*definir el ancho de la imagen*/
+    .iconContainer img {
+        width: 58px;
+    }
+
+    /* se posicione en relación a su contenedor principal, 
+    el elemento se ajuste a los bordes del contenedor,
+    definir el color de fondo semi-transparente*/
+    .mobile-menu {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    /*contenedor principal, y establece, ancho del contenedor,
+    anclar el contenedor a los bordes superior, derecho e inferior de su contenedor,
+    gregar un poco de espacio alrededor del contenido, establecer el punto de transformación,
+    definir la transición de animación, escala horizontal del contenedor,
+    alinear el contenido a la derecha*/
+    .mobile-links {
+        background-color: var(--Almost-White);
+        position: absolute;
+        width: 70%;
+        max-width: 185px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: 20px 28px;
+        transform-origin: right;
+        transition: all 250ms ease-out;
+        transform: scaleX(1);
+        text-align: right;
+    }
+
+    /*alinear el texto del contenido a la izquierda,
+    eliminar los puntos de lista*/
+    .linksContainer ul {
+        text-align: left;
+        list-style-type: none;
+    }
+
+    /*ocupe todo el ancho del contenedor, sistema de cajas flexible,
+    alinear el elemento a la derecha, ajustar el icono*/
+    .closeIcon {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        margin-right: -8px;
+    }
+
+    /*ajustar el icono*/
+    #closeMenu {
+        margin-right: -8px;
+    }
+
+    /*margen superior*/
+    .linksContainer {
+        margin-top: 35px;
+        color: var(--Medium-Gray);
+    }
+
+    /*margen izquierdo*/
+    .linksContainer img {
+        margin-left: 10px;
+    }
+
+    /*establece un margen en la parte superior e inferior*/
+    .linksContainer ul li {
+        margin: 25px 0px;
+    }
+
+    /**/
+    .mobileBtnContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*que no se muestre un contorno alrededor del botón, fondo transparente, 
+    tamaño de fuente y el color, margen superior e inferior*/
+    .mobileBtnContainer button {
+        outline: none;
+        background-color: transparent;
+        font-family: inherit;
+        font-size: 15px;
+        color: inherit;
+        margin: 10px 0;
+    }
+
+    /*no se muestre un borde alrededor*/
+    .mobileLoginBtn {
+        border: none;
+    }
+
+    /*un relleno en la parte superior e inferior, 
+    borde redondeado, borde sólido*/
+    .mobileRegisterBtn {
+        padding: 11px 0;
+        border-radius: 12px;
+        border: 2px solid var(--Medium-Gray);
+    }
+
+    /*margen izquierdo, margen superior, 
+    punto de origen de la transformación a la parte superior,
+    establece que el menú no se muestre inicialmente,
+    transformación de desplazamiento vertical en 0*/
+    .mobile-dropdown {
+        margin-left: 20px;
+        margin-top: 35px;
+        transform-origin: top;
+        display: none;
+        transform: translateY(0);
+    }
+
+    /*establece que el menú se muestre, se desplace hacia abajo en 1*/
+    .mobile-dropdown-show {
+        display: initial;
+        transform: translateY(1);
+    }
+
+    /*establece un ancho de imagen,
+    margen derecho*/
+    .mobile-dropdown img {
+        width: 18px;
+        margin: 0;
+        margin-right: 8px;
+    }
+
+    /*margen superior e inferior, margen izquierdo*/
+    .mobile-dropdown ul li {
+        margin: 18px 0;
+        color: var(--Medium-Gray);
+        margin-left: 15px;
+    }
+
+    /**/
+    .mobile-dropdown ul li:hover {
+        color: var(--Medium-Gray);
+    }
+}
